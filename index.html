@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TODO List</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>TODO List</h1>
+      <form v-on:submit.prevent>
+        <input type="text" v-model="newTask">
+        <button v-on:click="addTask">
+        Add
+        </button>
+      </form>
+      <ul>
+        <li v-for="(task, index) in tasks">
+          <input type="checkbox" v-model="task.finish">
+          <span v-bind:class="{ done: task.finish }">{{ task }}</span>
+          <button v-on:click='deleteTask(index)'>Delete</button>
+        </li>
+      </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
