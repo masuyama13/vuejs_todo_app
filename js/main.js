@@ -16,13 +16,19 @@ const app = new Vue({
   methods: {
     addTask () {
       if (!this.newTask) return
-      const todo = this.newTask
+      const todo = {
+        item: this.newTask,
+        finish: false
+      }
       this.tasks.push(todo)
       this.newTask = ''
       this.saveTasks()
     },
     deleteTask (index) {
       this.tasks.splice(index, 1)
+      this.saveTasks()
+    },
+    checkingTask () {
       this.saveTasks()
     },
     saveTasks () {
