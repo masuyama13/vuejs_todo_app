@@ -1,0 +1,39 @@
+#app {
+  line-height: 2;
+}
+ul {
+  list-style: none;
+}
+li > span.done {
+  text-decoration: line-through;
+}
+.textbox {
+  line-height: 20px;
+}
+.add_btn {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  background-color: #ffffff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+}
+.add_btn:hover {
+  background: #67c5ff;
+  color: white;
+}
+.dlt_btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #67c5ff;
+  background-color: #ffffff;
+  border: dashed 1px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+}
+.dlt_btn:hover {
+  border-style: dotted;
+  color: #679efd;
+}

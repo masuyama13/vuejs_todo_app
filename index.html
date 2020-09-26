@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>TODO List</title>
+    <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
     <div id="app">
       <h1>TODO List</h1>
       <form v-on:submit.prevent>
-        <input type="text" v-model="newTask">
-        <button v-on:click="addTask">
-        Add
-        </button>
+        <input type="text" class="textbox" v-model="newTask" />
+        <button class="add_btn" v-on:click="addTask">Add</button>
       </form>
       <ul>
         <li v-for="(task, index) in tasks">
-          <input type="checkbox" v-model="task.finish" v-on:change="checkingTask">
+          <input
+            type="checkbox"
+            v-model="task.finish"
+            v-on:change="checkingTask"
+          />
           <span v-bind:class="{ done: task.finish }">{{ task.item }}</span>
-          <button v-on:click='deleteTask(index)'>Delete</button>
+          <button class="dlt_btn" v-on:click="deleteTask(index)">Delete</button>
         </li>
       </ul>
     </div>
